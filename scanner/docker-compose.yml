@@ -1,0 +1,23 @@
+services:
+  bas-scanner:
+    env_file:
+      - ./scanner.env
+    build: .
+    container_name: bas-scanner
+    hostname: bas-scanner
+    # network_mode: "bridge"
+    depends_on:
+      - redis 
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  redis:
+    image: redislabs/redismod
+    container_name: redis
+  # bas-sensor:
+  #   container_name: bas-sensor
+  #   build: ./sensor
+  #   stop_signal: SIGINT
+  #   ports:
+  #     - '5000:5000'
+  #   extra_hosts:
+  #     - "host.docker.internal:host-gateway"
