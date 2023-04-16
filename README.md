@@ -6,7 +6,7 @@ Scanner - scan engine
         * SCAN_TYPE    
         * SCAN_SPEED      
     2.2 Create scanner.env file for docker compose that specifies the config for scan. Default config:  
-        * IS_SET=True    
+        * IS_SET=True     
         * SCAN_TYPE=DIRECTORY_TRAVERSAL_BASIC    
         * SCAN_CATEGORY=DIRECTORY_TRAVERSAL    
         * SCAN_SPEED=SLOW    
