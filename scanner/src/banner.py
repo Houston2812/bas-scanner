@@ -27,6 +27,9 @@ Payloads = {
     }
 }
 
+def create_config(scan_category, scan_type, scan_speed):
+    return ScanConfig(scan_category=scan_category, scan_type=Payloads[scan_category][scan_type], scan_speed=Speeds[scan_speed])
+
 def scan_banner():
     if IS_SET == True:
         # if scan_speed == 1:

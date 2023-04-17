@@ -5,8 +5,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 SCANNER_DIR = '/scanner'
-REDIS_URL = "0.0.0.0"
-TARGET_URL = "http://host.docker.internal:5000/"
+REDIS_URL = "localhost:6379"
+# TARGET_URL = "http://host.docker.internal:5000/"
+TARGET_URL = "http://localhost:5000/"
+
+KEY = os.getenv('KEY')
 
 if 'SCAN_TYPE' in os.environ or 'SCAN_CATEGORY' in os.environ or 'SCAN_SPEED' in os.environ:
     SCAN_TYPE = os.getenv('SCAN_TYPE')
@@ -22,11 +25,11 @@ else:
 SCAN_CONFIG = {
     'SCAN_CATEGORY' : SCAN_CATEGORY,
     'SCAN_TYPE' : SCAN_TYPE,
-    'SCAN_SPEED' : SCAN_SPEED
+    'SCAN_SPEED' : SCAN_SPEED,
 }
 
 redisCli = redis.Redis(
-    host = 'redis',
+    host = 'localhost',
     port = 6379,
     charset = 'utf-8',
     decode_responses = True

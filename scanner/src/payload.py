@@ -1,10 +1,11 @@
-from config import SCANNER_DIR, TARGET_URL, redisCli
-from requests import Request, Session
+from config import SCANNER_DIR, TARGET_URL, redisCli, KEY
+from requests import Request, Session, request
 from project_logger import logger
 import urllib.parse
 import uuid
 
 payload_directory = f'{SCANNER_DIR}/payloads'    
+
 
 class PayloadPackage():
     def __init__(self, payload, scan_type, scan_speed) -> None:
@@ -66,6 +67,7 @@ class PayloadPackage():
         # get keys from the hash
         result = redisCli.hkeys(self.__scan_type)
         
+        status = ""
         if self.__id in result:
             
             inserted_payload = redisCli.hget(self.__scan_type, self.__id)
@@ -86,11 +88,14 @@ class PayloadPackage():
             #     logger.warning("\n")
             
             if inserted_payload[:-1].casefold() == recieved_payload.casefold():
+                status = "bypassed"
                 logger.info("Payload bypassed the firewall!")
+            else :
+                status = "blocked"
+                logger.info("Payload did not bypass the firewall!")
         
         logger.info("----------")
 
-        return data['status']
-
+        return status
 
     
