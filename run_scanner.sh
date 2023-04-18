@@ -9,6 +9,8 @@ echo "Authorization key: $auth_key"
 touch scanner/key.env 
 echo "KEY=$auth_key" > scanner/key.env 
 
-docker run -d --network host redislabs/redismod
+# docker run -d --network host redislabs/redismod
+
+#sleep(10) 
 
 docker-compose -f ./scanner/docker-compose.yml up 

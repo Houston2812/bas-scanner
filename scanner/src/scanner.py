@@ -60,7 +60,7 @@ if __name__ == "__main__":
         
         report = ScanReport(scan_id=scan_id)
         for payload in payloads[:-1]:
-            payloadPackage = PayloadPackage(payload=payload, scan_type=scan_config.scan_type, scan_speed=scan_config.scan_speed)
+            payloadPackage = PayloadPackage(payload=payload, scan_category = scan_config.scan_category, scan_type=scan_config.scan_type, scan_speed=scan_config.scan_speed)
 
             entity = payloadPackage.get_entity()
             

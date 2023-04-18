@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 SCANNER_DIR = '/scanner'
-REDIS_URL = "localhost:6379"
+REDIS_URL = "0.0.0.0:6379"
 # TARGET_URL = "http://host.docker.internal:5000/"
 TARGET_URL = "http://localhost/"
 
@@ -29,7 +29,7 @@ SCAN_CONFIG = {
 }
 
 redisCli = redis.Redis(
-    host = 'localhost',
+    host = '0.0.0.0',
     port = 6379,
     charset = 'utf-8',
     decode_responses = True

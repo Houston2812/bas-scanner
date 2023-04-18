@@ -9,16 +9,10 @@ services:
     network_mode: "host"
     # depends_on:
     #   - redis 
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    #    extra_hosts:
+    #  - "host.docker.internal:host-gateway"
   # redis:
   #   image: redislabs/redismod
   #   container_name: redis
-  # bas-sensor:
-  #   container_name: bas-sensor
-  #   build: ./sensor
-  #   stop_signal: SIGINT
   #   ports:
-  #     - '5000:5000'
-  #   extra_hosts:
-  #     - "host.docker.internal:host-gateway"
+  #     - 6379 : 6379

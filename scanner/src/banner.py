@@ -18,13 +18,20 @@ class Speeds(Enum):
 
 Payloads = {
     "DIRECTORY_TRAVERSAL": {
-        "DIRECTORY_TRAVERSAL_FULL" : f"{SCANNER_DIR}/payloads/directory_traversal/directory_traversal.md",
         "DIRECTORY_TRAVERSAL_BASIC" : f"{SCANNER_DIR}/payloads/directory_traversal/directory_traversal_basic.md",
-        "DIRECTORY_TRAVERSAL_SHORT" : f"{SCANNER_DIR}/payloads/directory_traversal/directory_traversal_short.md"
+        "DIRECTORY_TRAVERSAL_SHORT" : f"{SCANNER_DIR}/payloads/directory_traversal/directory_traversal_short.md",
+        "DIRECTORY_TRAVERSAL_FULL" : f"{SCANNER_DIR}/payloads/directory_traversal/directory_traversal.md"
     },
     "SQL_INJECTION": {
-        "SQL_INJECTION_FULL" : f"{SCANNER_DIR}/payloads/sql_injection/sql_injection.md"
-    }
+        "SQL_INJECTION_BASIC" : f"{SCANNER_DIR}/payloads/sql_injection/sql_injection_basic.txt",
+        "SQL_INJECTION_SHORT" : f"{SCANNER_DIR}/payloads/sql_injection/sql_injection_short.txt",
+        "SQL_INJECTION_FULL" : f"{SCANNER_DIR}/payloads/sql_injection/sql_injection_full.txt"
+    },
+    "XSS": {
+        "XSS_BASIC": f"{SCANNER_DIR}/payloads/xss/xss_basic.txt",
+        "XSS_SHORT": f"{SCANNER_DIR}/payloads/xss/xss_short.txt",
+        "XSS_FULL": f"{SCANNER_DIR}/payloads/xss/xss_full.txt"
+    },
 }
 
 def create_config(scan_category, scan_type, scan_speed):
