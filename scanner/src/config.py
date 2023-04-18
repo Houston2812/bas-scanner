@@ -7,7 +7,7 @@ load_dotenv()
 SCANNER_DIR = '/scanner'
 REDIS_URL = "localhost:6379"
 # TARGET_URL = "http://host.docker.internal:5000/"
-TARGET_URL = "http://localhost:5000/"
+TARGET_URL = "http://localhost/"
 
 KEY = os.getenv('KEY')
 
