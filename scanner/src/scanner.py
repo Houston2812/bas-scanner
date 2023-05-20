@@ -74,5 +74,5 @@ if __name__ == "__main__":
         logger.debug("Scan Finished")
 
         send_report(report.get_report(), report.get_scan_id())
-        time.sleep(30)
+        time.sleep(1)
 
