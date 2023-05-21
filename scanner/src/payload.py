@@ -3,7 +3,7 @@ from requests import Request, Session, request
 from project_logger import logger
 import urllib.parse
 import uuid
-
+import time
 payload_directory = f'{SCANNER_DIR}/payloads'    
 
 
@@ -129,6 +129,9 @@ class PayloadPackage():
                     else :
                         status = "blocked"
                         logger.info("Payload did not bypass the firewall!")
+
+            
+            time.sleep(self.__scan_speed.value)
             
             logger.info("----------")
 

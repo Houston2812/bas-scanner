@@ -35,15 +35,18 @@ def check_scan():
     scan_type = resp.json()['scan_type']
     scan_speed = resp.json()['scan_speed']
 
+    if scan_speed == "Fast":
+        scan_speed = "FAST"
     logger.debug(f"ID: {scan_id}; Category: {scan_category}; Type: {scan_type}; Speed: {scan_speed};")
     
     return (scan_id, scan_category, scan_type, scan_speed)
 
-def send_report(report, scan_id):
+def send_report(report, scan_id, execution_time):
     payload = {
         "scan_id" : scan_id,
         "key": KEY,
-        "report": report
+        "report": report,
+        "time" : execution_time
     }
 
     resp = post(url = f"http://localhost:5555/scanner/report", json = payload)

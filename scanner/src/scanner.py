@@ -20,8 +20,7 @@ def read_payloads(file):
             counter += 1
             logger.warning(f"Payload: {payload}")
             payloads.append(payload)
-            if len(payloads) == 10:
-                return payloads
+            
         
         return payloads
 
@@ -59,6 +58,8 @@ if __name__ == "__main__":
         logger.debug("Sending payloads")
         
         report = ScanReport(scan_id=scan_id)
+
+        start_time = time.time()
         for payload in payloads[:-1]:
             payloadPackage = PayloadPackage(payload=payload, scan_category = scan_config.scan_category, scan_type=scan_config.scan_type, scan_speed=scan_config.scan_speed)
 
@@ -72,7 +73,13 @@ if __name__ == "__main__":
             report.add(payload, status)
 
         logger.debug("Scan Finished")
+        
+        end_time = time.time()  # Stop the timer
 
-        send_report(report.get_report(), report.get_scan_id())
+        execution_time = end_time - start_time
+        
+        logger.info(f"Execution time : {execution_time}")
+        
+        send_report(report.get_report(), report.get_scan_id(), execution_time)
         time.sleep(1)
 

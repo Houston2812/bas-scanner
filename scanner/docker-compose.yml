@@ -7,10 +7,7 @@ services:
     container_name: bas-scanner
     hostname: bas-scanner
     network_mode: "host"
-    # depends_on:
-    #   - redis 
-    #    extra_hosts:
-    #  - "host.docker.internal:host-gateway"
+
   # redis:
   #   image: redislabs/redismod
   #   container_name: redis

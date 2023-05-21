@@ -1,6 +1,7 @@
 ../../../foo.txt
 ../../../../../foo%00.txt
 ..%2f..%2f..%2ffoo.txt
+./\/././\/./foo.txt
 files/foo.txt/./.[N]/./.
 %2e%2e/%2e%2e/%2e%2e/foo.txt
 %2e%2e%2f%2e%2e%2f%2e%2e%2ffoo.txt

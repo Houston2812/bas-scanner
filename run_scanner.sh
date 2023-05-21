@@ -2,9 +2,9 @@
 
 echo "Running scanner"
 
-read -p "Enter the Authorization key: " auth_key
+read -p "Enter the Authentication key: " auth_key
 
-echo "Authorization key: $auth_key"
+echo "Authentication key: $auth_key"
 
 touch scanner/key.env 
 echo "KEY=$auth_key" > scanner/key.env 

